@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         //headsandTails();
 
-        //maxNumeral();
+        //maxNumeral(1245);
 
         //isPalindrome();   //Определяет, является ли число палиндромом. Ввод число, вывод в консоль и возвращает
                             //boolean.
@@ -39,16 +39,17 @@ public class Main {
     //Не совсем понятное задание. Насколько я понял, требовалось доказать, что 9 наибольшая цифра.
     //Берется 0 и делиться на разряд. Как только остаток будет отличаться от числителя, значит число уже двуразрядное.
     //Так, я не правильно понял задание, перезалил из-за этого.
-    static void maxNumeral() {
-        int n=0;
+    static void maxNumeral(int number) {
+
         int max = 0;
 
-        while(n%10==n){
-            if(n>max){
-                max=n;
+        while(number/10!=0){
+            if(number%10>max){
+                max=number%10;
             }
-            n++;
+            number/=10;
         }
+
         System.out.println(max);
     }
 
